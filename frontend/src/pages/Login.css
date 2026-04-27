@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── Page entière — centrage complet au milieu de l'écran ── */
+.lp {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Nunito', sans-serif;
+  background: linear-gradient(135deg, #4A90D9 0%, #6BB5F0 40%, #A8D4F5 70%, #D6EAFF 100%);
+  padding: 20px;
+}
+
+/* ── On cache le côté gauche — plus besoin ── */
+.lp-left { display: none; }
+
+/* ── Côté droit prend tout l'espace et centre ── */
+.lp-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+/* ── Carte blanche au centre de l'écran ── */
+.lp-card {
+  background: #fff;
+  border-radius: 24px;
+  padding: 44px 48px 36px;
+  width: 100%;
+  max-width: 480px;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.14);
+  animation: slideUp 0.45s ease;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Logo ── */
+.lp-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 28px;
+  justify-content: center;
+}
+.lp-logo-icon { display: flex; align-items: center; }
+.lp-logo-text  { display: flex; flex-direction: column; }
+.lp-logo-name  { font-size: 1.4rem; font-weight: 800; color: #1E3A5F; line-height: 1.1; }
+.lp-logo-sub   { font-size: 0.75rem; color: #64748B; font-weight: 500; }
+
+/* ── Titres ── */
+.lp-title    { text-align: center; font-size: 1.8rem; font-weight: 800; color: #1E293B; margin-bottom: 6px; }
+.lp-subtitle { text-align: center; color: #64748B; font-size: 0.9rem; margin-bottom: 28px; }
+
+/* ── Message d'erreur ── */
+.lp-error {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #FEF2F2;
+  border: 1px solid #FECACA;
+  color: #DC2626;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 0.85rem;
+  margin-bottom: 16px;
+}
+
+/* ── Formulaire ── */
+.lp-form { display: flex; flex-direction: column; gap: 16px; }
+
+.lp-field {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1.5px solid #E2E8F0;
+  border-radius: 12px;
+  background: #F8FAFC;
+  padding: 0 14px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.lp-field:focus-within {
+  border-color: #2563EB;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+}
+.lp-field input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 14px 0;
+  font-size: 0.95rem;
+  font-family: 'Nunito', sans-serif;
+  color: #1E293B;
+  outline: none;
+}
+.lp-field input::placeholder { color: #94A3B8; }
+
+.lp-eye {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+/* ── Lien mot de passe oublié ── */
+.lp-forgot { text-align: right; margin-top: -6px; }
+.lp-forgot a { color: #2563EB; font-size: 0.85rem; font-weight: 700; text-decoration: none; }
+.lp-forgot a:hover { text-decoration: underline; }
+
+/* ── Bouton connexion ── */
+.lp-btn {
+  background: #2563EB;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 15px;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: 'Nunito', sans-serif;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(37,99,235,0.3);
+  transition: background 0.2s, transform 0.1s;
+  margin-top: 4px;
+}
+.lp-btn:hover:not(:disabled)  { background: #1D4ED8; }
+.lp-btn:active:not(:disabled) { transform: scale(0.98); }
+.lp-btn:disabled { opacity: 0.7; cursor: not-allowed; }
+
+/* ── Inscription ── */
+.lp-register { text-align: center; color: #64748B; font-size: 0.88rem; margin-top: 20px; }
+.lp-register a { color: #1E3A5F; font-weight: 800; text-decoration: none; }
+.lp-register a:hover { text-decoration: underline; }
+
+/* ── Langue ── */
+.lp-lang {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid #F1F5F9;
+}
+.lp-lang button {
+  background: none;
+  border: none;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #94A3B8;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: color 0.2s;
+}
+.lp-lang button.active { color: #2563EB; border-bottom: 2px solid #2563EB; }
+.lp-lang span { color: #CBD5E1; }
+
+/* ── Responsive mobile ── */
+@media (max-width: 520px) {
+  .lp-card { padding: 32px 20px; }
+}
