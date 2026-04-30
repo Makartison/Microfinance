@@ -4,9 +4,13 @@ const cors    = require('cors');
 require('dotenv').config();
 
 const app = express();
-//app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
 app.use(cors({
-  origin: 'https://microfinance-xi.vercel.app'
+  origin: [
+    'http://localhost:3000',           // Local dev
+    'http://localhost:5173',           // Vite frontend dev
+    'https://microfinance-xi.vercel.app'  // Production Vercel (remplace par ton vrai domaine)
+  ],
+  credentials: true
 }));
 app.use(express.json());
 
